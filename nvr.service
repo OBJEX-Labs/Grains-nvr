@@ -1,0 +1,35 @@
+[Unit]
+Description=NVR Recording Service - Multi-camera Video Recorder
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=forking
+# CUSTOMIZE: Replace 'your_user' and 'your_group' with your actual system user and group
+User=your_user
+Group=your_group
+# CUSTOMIZE: Replace '/home/your_user' with your actual home directory
+WorkingDirectory=/home/your_user
+
+# Start the service
+# CUSTOMIZE: Update the path to match your nvr.sh location
+ExecStart=/home/your_user/nvr.sh start
+
+# Stop the service
+# CUSTOMIZE: Update the path to match your nvr.sh location
+ExecStop=/home/your_user/nvr.sh stop
+
+# Automatically restart on failure
+Restart=on-failure
+RestartSec=10
+
+# Timeouts
+TimeoutStartSec=30
+TimeoutStopSec=30
+
+# Resource limits (optional)
+# LimitNOFILE=65536
+# MemoryMax=4G
+
+[Install]
+WantedBy=multi-user.target
