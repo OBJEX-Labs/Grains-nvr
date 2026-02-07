@@ -41,7 +41,7 @@ This NVR system provides continuous video recording from RTSP-enabled IP cameras
 
 1. Clone this repository or download the files:
 ```bash
-git clone [<repository-url>](https://github.com/OBJEX-Labs/Grains-nvr.git)
+git clone https://github.com/OBJEX-Labs/Grains-nvr.git
 cd nvr-grain
 ```
 
